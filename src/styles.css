@@ -62,3 +62,24 @@ body {
     justify-content: space-between;
     padding: 10px 0;
 }
+
+/* Table */
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #c9d3dd;
+    color: #416281;
+}
+
+table.table * {
+    padding: 10px 0;
+}
+table.table tr {
+    border-top: 1px solid #c9d3dd;
+    border-bottom: 1px solid #c9d3dd;
+}
+
+table.table th {
+    background-color: #f8fafc;
+}
