@@ -1,0 +1,11 @@
+header {
+    width: 0 auto;
+    background-color: #008fc8;
+}
+
+#logo {
+    padding: 0 20px;
+}
+#logo img {
+    height: 3rem;
+}
