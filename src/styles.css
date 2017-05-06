@@ -3,6 +3,9 @@ body {
     margin: 0 auto;
     padding: 0 160px;
     background-color: #f1f4f9;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #406080;
 }
 
 /* globals styles helpers */
@@ -23,7 +26,7 @@ body {
 
 /* Container */
 .container {
-    padding: 20px 30px;
+    padding: 18px 30px;
 }
 
 
@@ -60,7 +63,7 @@ body {
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    margin-bottom: 18px;
 }
 
 /* Table */
@@ -70,16 +73,22 @@ table.table {
     background-color: #fff;
     border: 1px solid #c9d3dd;
     color: #416281;
+    margin-bottom: 18px;
 }
 
 table.table * {
     padding: 10px 0;
 }
+
 table.table tr {
     border-top: 1px solid #c9d3dd;
     border-bottom: 1px solid #c9d3dd;
 }
 
-table.table th {
+table.table thead {
     background-color: #f8fafc;
+}
+
+table.table tbody { 
+    font-size: 14px;
 }
