@@ -11,6 +11,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HeaderComponent } from "./header/header.component";
 import { FleetControlModule } from "./fleet-control/fleet-control.module";
 
+import { DialogService } from "./dialog.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,7 @@ import { FleetControlModule } from "./fleet-control/fleet-control.module";
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
+  providers: [DialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

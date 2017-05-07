@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from "@angular/router";
+import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Location } from '@angular/common';
 
 import { Veiculo } from './../veiculo.model';
@@ -18,14 +18,15 @@ export class FleetControlDetailComponent implements OnInit {
 
   constructor(
     private fleetControlService: FleetControlService,
-    private router: ActivatedRoute,
+    private activatedRouter: ActivatedRoute,
+    private router: Router,
     private location: Location
   ) {}
 
   ngOnInit() {
     this.veiculo = new Veiculo('','','','','',0);
 
-    this.router.params.forEach((params: Params) => {
+    this.activatedRouter.params.forEach((params: Params) => {
       let placa: string = this.resolvePlaca(params['placa']);
 
       if (placa) {
@@ -56,6 +57,7 @@ export class FleetControlDetailComponent implements OnInit {
   };
 
   goBack(): void {
-    this.location.back();
+    let link = ['fleetControl'];
+    this.router.navigate(link);
   }
 }

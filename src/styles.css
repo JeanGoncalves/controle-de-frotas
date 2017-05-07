@@ -23,6 +23,11 @@ body {
     color: #fff;
 }
 
+.btn.btn-red {
+    background-color: #f44336;
+    color: #fff;
+}
+
 
 /* Container */
 .container {

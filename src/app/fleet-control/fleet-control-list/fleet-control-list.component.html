@@ -1,6 +1,9 @@
 <div class="fleet-control-header">
 	<div class="grid">
-		<button class="btn btn-green" [routerLink]="['/fleetControl/new/']">Novo Carro</button>
+    <div class="buttons">
+      <button class="btn btn-green" [routerLink]="['/fleetControl/new/']">Novo Carro</button>
+      <button class="btn btn-red" *ngIf="hasCheckboxChecked" (click)="onDelete()">Deletar Carro</button>
+    </div>
 
 		<div class="form-content">
 			<input type="text" class="form-item form-item-input" name="search" id="header-search" placeholder="Pesquisar">
@@ -14,7 +17,10 @@
       <thead>
         <tr>
           <th align="left">
-            <input type="checkbox" name="cbx-all">
+            <input type="checkbox" name="cbx-all" 
+            #checkbox="ngModel"
+            [(ngModel)]="checkboxHead"
+            (change)="onChangeCbxAll()">
           </th>
           <th align="left">
             <span>Placa</span>
@@ -37,9 +43,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let veiculo of veiculos">
+        <tr *ngFor="let veiculo of veiculos; let idx = index">
           <td>
-            <input type="checkbox" name="cbx-all">
+            <input type="checkbox" name="cbx" 
+              #cbx="ngModel"
+              [(ngModel)]="veiculo.checked"
+              (change)="onChangeCbx()">
           </td>
           <td>
             <span>{{ veiculo.placa }}</span>
@@ -59,6 +68,11 @@
           </td>
           <td>
             <span>{{ veiculo.valor | currency: 'BRL' | slice:3 }}</span>
+          </td>
+        </tr>
+        <tr *ngIf="veiculos.length == 0">
+          <td align="center" colspan="7">
+            Não hà veículos cadastrados. <a [routerLink]="['/fleetControl/new/']">Clique aqui</a> para inserir um novo.
           </td>
         </tr>
       </tbody>

@@ -48,7 +48,7 @@ export class FleetControlService {
     }
 
     delete(veiculo: Veiculo): Promise<Veiculo> {
-        const url = `${this.veiculosUrl}/${veiculo.placa}`;
+        const url = `${this.veiculosUrl}/1`;
         return this.http
             .delete(url, {headers: this.headers})
             .toPromise()
