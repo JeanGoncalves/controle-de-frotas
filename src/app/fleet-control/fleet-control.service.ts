@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/toPromise';
 
 import { Veiculo } from "./veiculo.model";
-import { VEICULOS } from "./veiculos-mock";
 
 @Injectable()
 export class FleetControlService {
@@ -25,9 +24,9 @@ export class FleetControlService {
             .catch(this.handleError);
     }
 
-    find(id: number): Promise<Veiculo> {
+    find(placa: string): Promise<Veiculo> {
         return this.findAll()
-            .then((veiculos: Veiculo[]) => veiculos.find((veiculo) => veiculo.id === id));
+            .then((veiculos: Veiculo[]) => veiculos.find((veiculo) => veiculo.placa === placa));
     }
 
     create(veiculo: Veiculo): Promise<Veiculo> {

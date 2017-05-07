@@ -37,119 +37,27 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let veiculo of veiculos">
           <td>
             <input type="checkbox" name="cbx-all">
           </td>
           <td>
-            <span>AAA0001</span>
+            <span>{{ veiculo.placa }}</span>
           </td>
           <td>
-            <span>Gol</span>
+            <span>{{ veiculo.modelo }}</span>
           </td>
           <td>
-            <span>Volkswagem</span>
+            <span>{{ veiculo.marca }}</span>
           </td>
           <td>
-            <span>Sem Foto</span>
+            <span>{{ veiculo.imagem }}</span>
           </td>
           <td>
-            <span>Gasolina</span>
+            <span>{{ veiculo.combustivel }}</span>
           </td>
           <td>
-            <span>20.000,00</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="checkbox" name="cbx-all">
-          </td>
-          <td>
-            <span>AAA0002</span>
-          </td>
-          <td>
-            <span>Gol</span>
-          </td>
-          <td>
-            <span>Volkswagem</span>
-          </td>
-          <td>
-            <span>Sem Foto</span>
-          </td>
-          <td>
-            <span>Álcool</span>
-          </td>
-          <td>
-            <span>20.000,00</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="checkbox" name="cbx-all">
-          </td>
-          <td>
-            <span>AAA0003</span>
-          </td>
-          <td>
-            <span>Gol</span>
-          </td>
-          <td>
-            <span>Volkswagem</span>
-          </td>
-          <td>
-            <span><a href="www.imagem-da-foto.com.br">Imagem</a></span>
-          </td>
-          <td>
-            <span>Gasolina</span>
-          </td>
-          <td>
-            <span>20.000,00</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="checkbox" name="cbx-all">
-          </td>
-          <td>
-            <span>AAA0004</span>
-          </td>
-          <td>
-            <span>Pálio</span>
-          </td>
-          <td>
-            <span>Fiat</span>
-          </td>
-          <td>
-            <span><a href="www.imagem-da-foto.com.br">Imagem</a></span>
-          </td>
-          <td>
-            <span>Gasolina</span>
-          </td>
-          <td>
-            <span>20.000,00</span>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="checkbox" name="cbx-all">
-          </td>
-          <td>
-            <span></span>
-          </td>
-          <td>
-            <span>Gol</span>
-          </td>
-          <td>
-            <span>Volkswagem</span>
-          </td>
-          <td>
-            <span>Sem Foto</span>
-          </td>
-          <td>
-            <span>Gasolina</span>
-          </td>
-          <td>
-            <span>20.000,00</span>
+            <span>{{ veiculo.valor }}</span>
           </td>
         </tr>
       </tbody>

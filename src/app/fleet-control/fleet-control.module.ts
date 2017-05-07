@@ -22,6 +22,8 @@ import { FleetControlService } from './fleet-control.service';
         FleetControlListComponent,
         FleetControlDetailComponent
     ],
-    providers: [FleetControlService]
+    providers: [
+        FleetControlService
+    ]
 })
 export class FleetControlModule {}
