@@ -33,17 +33,27 @@ export class FleetControlDetailComponent implements OnInit {
         this.fleetControlService.find(placa)
           .then((veiculo: Veiculo) => {
             this.veiculo = veiculo;
-            console.log(placa, veiculo);
           })
       }
     })
-    
   }
 
-  resolvePlaca = function(placa: string): string {
-    if (!placa) return;
-    return placa.substr(0, 3) + '-' + placa.substr(3);
+  onSubmit(): void {
+    let promise;
+
+    if (this.isNew) {
+      promise = this.fleetControlService.create(this.veiculo);    
+    } else {
+      promise = this.fleetControlService.update(this.veiculo);
+    }
+
+    promise.then(veiculo => this.goBack());
   }
+
+  resolvePlaca(placa: string): string {
+    if (!placa) return '';
+    return placa.substr(0, 3) + '-' + placa.substr(3);
+  };
 
   goBack(): void {
     this.location.back();

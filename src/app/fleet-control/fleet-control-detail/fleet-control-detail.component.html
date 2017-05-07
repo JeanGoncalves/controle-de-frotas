@@ -6,25 +6,49 @@
   <div class="form-control">
 
     <span>Placa</span>
-    <input type="text" name="placa" value="{{ veiculo.placa }}"><br />
+    <input type="text" 
+      name="placa"
+      #placa="ngModel"
+      required
+      [(ngModel)]="veiculo.placa"><br />
     
     <span>Marca</span>
-    <input type="text" name="marca" value="{{ veiculo.marca }}"><br />
+    <input type="text" 
+      name="marca" 
+      #marca="ngModel"
+      required
+      [(ngModel)]="veiculo.marca"><br />
     
     <span>Modelo</span>
-    <input type="text" name="modelo" value="{{ veiculo.modelo }}"><br />
+    <input type="text" 
+      name="modelo" 
+      #modelo="ngModel"
+      required
+      [(ngModel)]="veiculo.modelo"><br />
     
     <span>Combustível</span>
-    <input type="text" name="combustivel"  value="{{ veiculo.combustivel }}"><br />
+    <input type="text" 
+      name="combustivel" 
+      #combustivel="ngModel"
+      required
+      [(ngModel)]="veiculo.combustivel"><br />
 
     <span>Imagem</span>
-    <input type="text" name="imagem" value="{{ veiculo.imagem }}"><br />
+    <input type="text" 
+      name="imagem" 
+      #imagem="ngModel"
+      required
+      [(ngModel)]="veiculo.imagem"><br />
 
     <span>Valor</span>
-    <input type="text" name="valor" value="{{ veiculo.valor }}"><br />
+    <input type="text" 
+      name="valor" 
+      #valor="ngModel"
+      required
+      [(ngModel)]="veiculo.valor"><br />
 
 
-    <input type="submit" value="Gravar">
+    <input type="submit" value="Gravar" (click)="onSubmit()">
     <input type="button" value="Cancelar" (click)="goBack()">
     
   </div>
