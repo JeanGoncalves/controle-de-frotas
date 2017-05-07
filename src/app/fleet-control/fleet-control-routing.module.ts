@@ -11,7 +11,11 @@ const FleetControlRoutes: Routes = [
         component: FleetControlListComponent
     },
     {
-        path: 'fleetControl/:id',
+        path: 'fleetControl/new',
+        component: FleetControlDetailComponent
+    },
+    {
+        path: 'fleetControl/edit/:placa',
         component: FleetControlDetailComponent
     }
 ];

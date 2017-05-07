@@ -1,3 +1,32 @@
-<p>
-  fleet-control-detail works!
-</p>
+<div class="panel">
+
+  <h1 *ngIf="isNew">Novo Veículo</h1>
+  <h1 *ngIf="!isNew">Editar Veículo</h1>
+
+  <div class="form-control">
+
+    <span>Placa</span>
+    <input type="text" name="placa" value="{{ veiculo.placa }}"><br />
+    
+    <span>Marca</span>
+    <input type="text" name="marca" value="{{ veiculo.marca }}"><br />
+    
+    <span>Modelo</span>
+    <input type="text" name="modelo" value="{{ veiculo.modelo }}"><br />
+    
+    <span>Combustível</span>
+    <input type="text" name="combustivel"  value="{{ veiculo.combustivel }}"><br />
+
+    <span>Imagem</span>
+    <input type="text" name="imagem" value="{{ veiculo.imagem }}"><br />
+
+    <span>Valor</span>
+    <input type="text" name="valor" value="{{ veiculo.valor }}"><br />
+
+
+    <input type="submit" value="Gravar">
+    <input type="button" value="Cancelar" (click)="goBack()">
+    
+  </div>
+  
+</div>
