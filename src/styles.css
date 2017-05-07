@@ -89,6 +89,11 @@ table.table tr {
     border-top: 1px solid #c9d3dd;
     border-bottom: 1px solid #c9d3dd;
 }
+table.table tbody tr:hover {
+    cursor: pointer;
+    background-color: #d8e9fb;
+    border: 1px solid #8bc8f6;
+}
 
 table.table thead {
     background-color: #f8fafc;

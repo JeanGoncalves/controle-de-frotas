@@ -50,23 +50,23 @@
               [(ngModel)]="veiculo.checked"
               (change)="onChangeCbx()">
           </td>
-          <td>
+          <td [routerLink]="['/fleetControl/edit/', resolvePlaca(veiculo)]">
             <span>{{ veiculo.placa }}</span>
           </td>
-          <td>
+          <td [routerLink]="['/fleetControl/edit/', resolvePlaca(veiculo)]">
             <span>{{ veiculo.modelo }}</span>
           </td>
-          <td>
+          <td [routerLink]="['/fleetControl/edit/', resolvePlaca(veiculo)]">
             <span>{{ veiculo.marca }}</span>
           </td>
-          <td>
+          <td [routerLink]="['/fleetControl/edit/', resolvePlaca(veiculo)]">
             <span *ngIf="veiculo.imagem === null">Sem Foto</span>
             <span *ngIf="veiculo.imagem !== null"><a href="{{ veiculo.imagem }}">Imagem</a></span>
           </td>
-          <td>
+          <td [routerLink]="['/fleetControl/edit/', resolvePlaca(veiculo)]">
             <span>{{ veiculo.combustivel }}</span>
           </td>
-          <td>
+          <td [routerLink]="['/fleetControl/edit/', resolvePlaca(veiculo)]">
             <span>{{ veiculo.valor | currency: 'BRL' | slice:3 }}</span>
           </td>
         </tr>

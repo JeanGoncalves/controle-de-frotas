@@ -38,7 +38,7 @@ export class FleetControlService {
     }
 
     update(veiculo: Veiculo): Promise<Veiculo> {
-        const url = `${this.veiculosUrl}/${veiculo.placa}`;
+        const url = `${this.veiculosUrl}/${this.replacePlaca(veiculo)}`;
         
         return this.http
             .put(url, JSON.stringify(veiculo), {headers: this.headers})
@@ -48,7 +48,7 @@ export class FleetControlService {
     }
 
     delete(veiculo: Veiculo): Promise<Veiculo> {
-        const url = `${this.veiculosUrl}/1`;
+        const url = `${this.veiculosUrl}/${this.replacePlaca(veiculo)}`;
         return this.http
             .delete(url, {headers: this.headers})
             .toPromise()
@@ -64,5 +64,9 @@ export class FleetControlService {
         return this.http
             .get(`${this.veiculosUrl}/?modelo=${term}`)
             .map((res: Response) => res.json().data as Veiculo[])
+    }
+
+    replacePlaca(veiculo: Veiculo): string {
+        return veiculo.placa.replace('-', '');
     }
 }

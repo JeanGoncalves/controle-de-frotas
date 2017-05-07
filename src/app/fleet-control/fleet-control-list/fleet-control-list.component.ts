@@ -66,4 +66,8 @@ export class FleetControlListComponent implements OnInit {
             }
         });
   }
+
+  resolvePlaca(veiculo: Veiculo): string {
+    return veiculo.placa.replace('-', '');
+  }
 }
