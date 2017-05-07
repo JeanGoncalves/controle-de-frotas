@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FleetControlFooterComponent } from './fleet-control-footer.component';
+import { FleetControlDetailComponent } from './fleet-control-detail.component';
 
-describe('FleetControlFooterComponent', () => {
-  let component: FleetControlFooterComponent;
-  let fixture: ComponentFixture<FleetControlFooterComponent>;
+describe('FleetControlDetailComponent', () => {
+  let component: FleetControlDetailComponent;
+  let fixture: ComponentFixture<FleetControlDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FleetControlFooterComponent ]
+      declarations: [ FleetControlDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FleetControlFooterComponent);
+    fixture = TestBed.createComponent(FleetControlDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

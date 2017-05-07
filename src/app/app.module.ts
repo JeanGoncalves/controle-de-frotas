@@ -4,27 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FleetControlComponent } from './fleet-control/fleet-control.component';
-import { FleetControlHeaderComponent } from './fleet-control/fleet-control-header/fleet-control-header.component';
-import { FleetControlBodyComponent } from './fleet-control/fleet-control-body/fleet-control-body.component';
-import { FleetControlFooterComponent } from './fleet-control/fleet-control-footer/fleet-control-footer.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { HeaderComponent } from "./header/header.component";
+import { FleetControlModule } from "./fleet-control/fleet-control.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FleetControlComponent,
-    FleetControlHeaderComponent,
-    FleetControlBodyComponent,
-    FleetControlFooterComponent
+    HeaderComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
+    FleetControlModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
