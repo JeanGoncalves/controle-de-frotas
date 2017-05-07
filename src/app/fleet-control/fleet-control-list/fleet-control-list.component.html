@@ -58,7 +58,7 @@
             <span>{{ veiculo.combustivel }}</span>
           </td>
           <td>
-            <span>{{ veiculo.valor }}</span>
+            <span>{{ veiculo.valor | currency: 'BRL' | slice:3 }}</span>
           </td>
         </tr>
       </tbody>
