@@ -51,7 +51,8 @@
             <span>{{ veiculo.marca }}</span>
           </td>
           <td>
-            <span>{{ veiculo.imagem }}</span>
+            <span *ngIf="veiculo.imagem === null">Sem Foto</span>
+            <span *ngIf="veiculo.imagem !== null"><a href="{{ veiculo.imagem }}">Imagem</a></span>
           </td>
           <td>
             <span>{{ veiculo.combustivel }}</span>
