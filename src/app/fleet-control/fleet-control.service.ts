@@ -30,6 +30,7 @@ export class FleetControlService {
     }
 
     create(veiculo: Veiculo): Promise<Veiculo> {
+        console.log(veiculo);
         return this.http
             .post(this.veiculosUrl, JSON.stringify(veiculo), {headers: this.headers})
             .toPromise()

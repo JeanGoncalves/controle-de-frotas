@@ -28,12 +28,39 @@ body {
     color: #fff;
 }
 
+.btn-clear {
+    background-color: transparent;
+    color: #777;
+}
+
 
 /* Container */
 .container {
     padding: 18px 40px;
 }
 
+
+/* Panel*/
+.panel {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #c9d3dd;
+    padding: 0 20px;
+}
+
+.panel-header {
+    border-bottom: 1px solid #c9d3dd;
+    margin-bottom: 20px;
+}
+.panel-header *:first-child {
+    margin-bottom: 0;
+}
+
+.panel-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
 
 /* Form components */
 .form-content {
@@ -60,6 +87,19 @@ body {
 .form-content .form-item:last-child {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+.form-control .form-group {
+    display: grid;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-control .form-group input {
+    padding: 12px 15px;
+    border: 1px solid #c9d3dd;
+    border-radius: 5px;
+    color: #416281;
 }
 
 

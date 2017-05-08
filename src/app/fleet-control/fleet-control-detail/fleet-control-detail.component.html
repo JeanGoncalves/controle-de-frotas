@@ -1,56 +1,71 @@
 <div class="panel">
 
-  <h1 *ngIf="isNew">Novo Veículo</h1>
-  <h1 *ngIf="!isNew">Editar Veículo</h1>
+  <div class="panel-header">
+    <h1 *ngIf="isNew">Novo Veículo</h1>
+    <h1 *ngIf="!isNew">Editar Veículo</h1>
+  </div>
 
   <div class="form-control">
 
-    <span>Placa</span>
-    <input type="text" 
-      name="placa"
-      #placa="ngModel"
-      required
-      [(ngModel)]="veiculo.placa"><br />
+    <div class="form-group">
+      <span>Placa</span>
+      <input type="text" 
+        name="placa"
+        #placa="ngModel"
+        required
+        [(ngModel)]="veiculo.placa"><br />
+    </div>
     
-    <span>Marca</span>
-    <input type="text" 
-      name="marca" 
-      #marca="ngModel"
-      required
-      [(ngModel)]="veiculo.marca"><br />
+    <div class="form-group">
+      <span>Marca</span>
+      <input type="text" 
+        name="marca" 
+        #marca="ngModel"
+        required
+        [(ngModel)]="veiculo.marca"><br />
+    </div>
     
-    <span>Modelo</span>
-    <input type="text" 
-      name="modelo" 
-      #modelo="ngModel"
-      required
-      [(ngModel)]="veiculo.modelo"><br />
+    <div class="form-group">
+      <span>Modelo</span>
+      <input type="text" 
+        name="modelo" 
+        #modelo="ngModel"
+        required
+        [(ngModel)]="veiculo.modelo"><br />
+    </div>
     
-    <span>Combustível</span>
-    <input type="text" 
-      name="combustivel" 
-      #combustivel="ngModel"
-      required
-      [(ngModel)]="veiculo.combustivel"><br />
+    <div class="form-group">
+      <span>Combustível</span>
+      <input type="text" 
+        name="combustivel" 
+        #combustivel="ngModel"
+        required
+        [(ngModel)]="veiculo.combustivel"><br />
+    </div>
 
-    <span>Imagem</span>
-    <input type="text" 
-      name="imagem" 
-      #imagem="ngModel"
-      required
-      [(ngModel)]="veiculo.imagem"><br />
+    <div class="form-group">
+      <span>Imagem</span>
+      <input type="text" 
+        name="imagem" 
+        #imagem="ngModel"
+        required
+        [(ngModel)]="veiculo.imagem"><br />
+    </div>
 
-    <span>Valor</span>
-    <input type="text" 
-      name="valor" 
-      #valor="ngModel"
-      required
-      [(ngModel)]="veiculo.valor"><br />
+    <div class="form-group">
+      <span>Valor</span>
+      <input type="text" 
+        name="valor" 
+        #valor="ngModel"
+        required
+        [(ngModel)]="veiculo.valor"><br />
+    </div>
 
-
-    <input type="submit" value="Gravar" (click)="onSubmit()">
-    <input type="button" value="Cancelar" (click)="goBack()">
-    
+  </div>
+  
+  <div class="panel-footer">
+    <input type="button" class="btn btn-clear" value="Cancelar" (click)="goBack()">
+    <input type="submit" class="btn btn-green" value="Gravar" (click)="onSubmit()">
   </div>
   
 </div>

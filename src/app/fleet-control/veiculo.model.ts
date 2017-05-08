@@ -7,7 +7,7 @@ export class Veiculo {
         public modelo: string,
         public placa: string,
         public valor: number,
-        public checked: boolean = false
-    ) {}
 
+        public checked?: boolean
+    ) {}
 }
