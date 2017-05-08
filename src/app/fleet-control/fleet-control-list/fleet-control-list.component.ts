@@ -52,10 +52,6 @@ export class FleetControlListComponent implements OnInit {
     this.changeCheckbox();
   }
 
-  onChangeCbx(): void {
-    this.changeCheckbox();
-  }
-
   private changeCheckbox(): void {
     this.hasCheckboxChecked = false;
     this.veiculos.forEach((veiculo: Veiculo) => {
@@ -106,6 +102,8 @@ export class FleetControlListComponent implements OnInit {
   onChangePage(page: number): void {
     this.veiculos = this._veiculos.slice((page - 1) * this.perPage, this.perPage * page);
     this.pageNow = page;
+    this.checkboxHead = false;
+    this.onChangeCbxAll();
   }
 
   private resolvePlaca(veiculo: Veiculo): string {

@@ -1,5 +1,11 @@
-    /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "RobotoLight";
+    src: url(assets/font/Roboto-light.ttf);
+}
+
+/* You can add global styles to this file, and also import other style files */
 body {
+    font-family: "RobotoLight" !important;
     margin: 0 auto;
     padding: 0 163px;
     background-color: #f1f4f9;
@@ -124,17 +130,16 @@ table.table {
     background-color: #fff;
     border: 1px solid #c9d3dd;
     color: #416281;
-    margin-bottom: 18px;
+    margin-bottom: 32px;
 }
-
-/*table.table * {
-    padding: 14px 0;
-}*/
 
 table.table tr {
     border-top: 1px solid #c9d3dd;
     border-bottom: 1px solid #c9d3dd;
-    height: 45px;
+}
+
+table.table tbody tr {
+    height: 50px;
 }
 table.table tbody tr:hover {
     cursor: pointer;
@@ -170,6 +175,7 @@ table.table tbody {
     border: 1px solid #c9d3dd;
     margin: -1px;
     background-color: #fff;
+    cursor: pointer;
 }
 
 .pagination button:hover {
@@ -218,13 +224,13 @@ table.table tbody {
 .filters .icon {
     background: #fff;
     border: 1px solid #c9d3dd;
-    border-radius: .3em;
+    border-radius: .2em;
     text-align: center;
-    font-size: 1.5em !important;
+    font-size: 1.3em !important;
     color: #666;
-    margin: 8px;
-    height: 1em;
-    width: 1em;
+    margin: 7px 8px;
+    height: .9em;
+    width: .9em;
     padding: 0.15em;
     line-height: 1.1em;
 }

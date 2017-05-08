@@ -16,7 +16,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th align="left">
+          <th align="left" width="45">
             <label class="filters">
               <input type="checkbox" name="cbx-all" 
                 #checkbox="ngModel"
@@ -25,16 +25,16 @@
               <span class="icon"><i class="fa fa-check"></i></span>
             </label>
           </th>
-          <th align="left">
+          <th align="left" width="150">
             <span>Placa</span>
           </th>
-          <th align="left">
+          <th align="left" width="140">
             <span>Modelo</span>
           </th>
           <th align="left">
             <span>Marca</span>
           </th>
-          <th align="left">
+          <th align="left" width="150">
             <span>Foto</span>
           </th>
           <th align="left">
@@ -49,10 +49,10 @@
         <tr *ngFor="let veiculo of veiculos; let idx = index">
           <td>
             <label class="filters">
-              <input type="checkbox" name="cbx" 
+              <input type="checkbox" name="cbx"
                 #cbx="ngModel"
                 [(ngModel)]="veiculo.checked"
-                (change)="onChangeCbx()">
+                (change)="changeCheckbox()">
               <span class="icon"><i class="fa fa-check"></i></span>
             </label>
           </td>
@@ -93,7 +93,7 @@
 
 		<button class="btn-page" *ngFor="let page of pagination" [disabled]="page === pageNow" (click)="onChangePage(page)">{{page}}</button>
 
-		<button (click)="onChangePage(pageNow + 1)" [disabled]="pageNow === pagination.length">
+		<button (click)="onChangePage(pageNow + 1)" [disabled]="pageNow === pagination.length || pagination.length === 0">
       <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>
     </button>
 	</div>
