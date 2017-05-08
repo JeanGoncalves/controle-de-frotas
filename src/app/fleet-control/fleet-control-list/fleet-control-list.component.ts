@@ -13,6 +13,8 @@ import { DialogService } from './../../dialog.service';
 export class FleetControlListComponent implements OnInit {
 
   veiculos: Veiculo[] = [];
+  _veiculos: Veiculo[] = [];
+
   checkboxHead: boolean = false;
   hasCheckboxChecked: boolean = false;
 
@@ -24,12 +26,13 @@ export class FleetControlListComponent implements OnInit {
   ngOnInit() {
     
     this.fleetControlService.findAll()
-            .then((veiculos: Veiculo[]) => {
-                this.veiculos = veiculos;
-            })
-            .catch(err => {
-                console.error(err);
-            });
+        .then((veiculos: Veiculo[]) => {
+            this.veiculos = veiculos;
+            this._veiculos = veiculos;
+        })
+        .catch(err => {
+            console.error(err);
+        });
   }
 
   onChangeCbxAll(): void {
@@ -65,6 +68,10 @@ export class FleetControlListComponent implements OnInit {
                 });
             }
         });
+  }
+
+  onSearch(term: any): void {
+    this.veiculos = this._veiculos.filter((veiculo: Veiculo) => veiculo.combustivel.indexOf(term.value) !== -1 || veiculo.marca.indexOf(term.value) !== -1);
   }
 
   resolvePlaca(veiculo: Veiculo): string {

@@ -63,10 +63,11 @@ export class FleetControlService {
         return Promise.reject(err.message || err);
     }
 
-    search(term: string): Observable<Veiculo[]> {
-        return this.http
-            .get(`${this.veiculosUrl}/?modelo=${term}`)
-            .map((res: Response) => res.json().data as Veiculo[])
+    search(term: string): Promise<Veiculo[]> {
+        return this.http.get(`${this.veiculosUrl}/?marca=${term}`)
+            .toPromise()
+            .then(response => response.json().data as Veiculo[])
+            .catch(this.handleError);
     }
 
     replacePlaca(veiculo: Veiculo): string {
