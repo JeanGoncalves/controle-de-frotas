@@ -164,3 +164,13 @@ table.table tbody {
     margin: -1px;
     background-color: #fff;
 }
+
+.pagination button:hover {
+    background-color: #fffaeb;
+}
+
+.pagination button.btn-page:disabled {
+    background-color: #d8e9fb;
+    border: 1px solid #8bc8f6;
+    color: #708ca7;
+}

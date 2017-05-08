@@ -32,6 +32,42 @@ export class InMemoryDataService implements InMemoryDbService {
                 modelo : "Fusca",
                 placa : "PAI-4121",
                 valor : 20000
+            },
+            { 
+                id : 4,
+                combustivel : "Alcool",
+                imagem : "http://carros.ig.com.br/fotos/2010/290_193/Fusca2_290_193.jpg",
+                marca : "Volkswagen",
+                modelo : "Fusca",
+                placa : "PAI-4121",
+                valor : 20000
+            },
+            { 
+                id : 5,
+                combustivel : "Alcool",
+                imagem : "http://carros.ig.com.br/fotos/2010/290_193/Fusca2_290_193.jpg",
+                marca : "Volkswagen",
+                modelo : "Fusca",
+                placa : "PAI-4121",
+                valor : 20000
+            },
+            { 
+                id : 6,
+                combustivel : "Alcool",
+                imagem : "http://carros.ig.com.br/fotos/2010/290_193/Fusca2_290_193.jpg",
+                marca : "Volkswagen",
+                modelo : "Fusca",
+                placa : "PAI-4121",
+                valor : 20000
+            },
+            { 
+                id : 7,
+                combustivel : "Alcool",
+                imagem : "http://carros.ig.com.br/fotos/2010/290_193/Fusca2_290_193.jpg",
+                marca : "Volkswagen",
+                modelo : "Fusca",
+                placa : "PAI-4121",
+                valor : 20000
             }
         ];
 

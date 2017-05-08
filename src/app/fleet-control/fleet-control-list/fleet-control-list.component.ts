@@ -18,6 +18,15 @@ export class FleetControlListComponent implements OnInit {
   checkboxHead: boolean = false;
   hasCheckboxChecked: boolean = false;
 
+  // pagination
+  pageNow: number = 1;
+  pagination: any[] = [];
+
+  /**
+   * elements per page 
+   **/
+  perPage: number = 5
+
   constructor(
     private fleetControlService: FleetControlService,
     private dialogService: DialogService
@@ -27,12 +36,15 @@ export class FleetControlListComponent implements OnInit {
     
     this.fleetControlService.findAll()
         .then((veiculos: Veiculo[]) => {
-            this.veiculos = veiculos;
+            this.createPagination(veiculos);
             this._veiculos = veiculos;
+
+            this.veiculos = veiculos.slice(0, this.perPage);
         })
         .catch(err => {
             console.error(err);
         });
+      
   }
 
   onChangeCbxAll(): void {
@@ -74,7 +86,20 @@ export class FleetControlListComponent implements OnInit {
     this.veiculos = this._veiculos.filter((veiculo: Veiculo) => veiculo.combustivel.indexOf(term.value) !== -1 || veiculo.marca.indexOf(term.value) !== -1);
   }
 
-  resolvePlaca(veiculo: Veiculo): string {
+  private createPagination(veiculos: Veiculo[]): void {
+    let count = veiculos.length;
+    this.pagination = [];
+    for(let i = 1; i <= Math.ceil(count / this.perPage); i++) {
+      this.pagination.push(i);
+    }
+  }
+
+  onChangePage(page: number): void {
+    this.veiculos = this._veiculos.slice((page - 1) * this.perPage, this.perPage * page);
+    this.pageNow = page;
+  }
+
+  private resolvePlaca(veiculo: Veiculo): string {
     return veiculo.placa.replace('-', '');
   }
 }

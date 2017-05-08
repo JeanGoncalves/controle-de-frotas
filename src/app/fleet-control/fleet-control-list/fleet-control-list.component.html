@@ -51,7 +51,7 @@
               (change)="onChangeCbx()">
           </td>
           <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
-            <span>{{ veiculo.placa }}</span>
+            <span>{{veiculo.id}} {{ veiculo.placa }}</span>
           </td>
           <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
             <span>{{ veiculo.modelo }}</span>
@@ -81,12 +81,10 @@
 
 <div class="fleet-control-footer">
   <div class="pagination">
-		<button><<</button>
-		<button>1</button>
-		<button>2</button>
-		<button>3</button>
-		<button>4</button>
-		<button>5</button>
-		<button>>></button>
+		<button (click)="onChangePage(1)" [disabled]="pageNow === 1"><<</button>
+
+		<button class="btn-page" *ngFor="let page of pagination" [disabled]="page === pageNow" (click)="onChangePage(page)">{{page}}</button>
+
+		<button (click)="onChangePage(pageNow + 1)" [disabled]="pageNow === pagination.length">>></button>
 	</div>
 </div>
