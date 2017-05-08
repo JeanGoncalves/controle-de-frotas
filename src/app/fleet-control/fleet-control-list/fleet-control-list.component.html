@@ -6,8 +6,8 @@
     </div>
 
 		<div class="form-content">
-			<input type="text" class="form-item form-item-input" name="search" #search id="header-search" placeholder="Pesquisar">
-			<button class="form-item form-item-btn" (click)="onSearch(search)">Search</button>
+			<input type="search" class="form-item form-item-input" name="search" #search id="header-search" placeholder="Pesquisar">
+			<button class="form-item form-item-btn" (click)="onSearch(search)"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</div>
 	</div>
 </div>
@@ -17,10 +17,13 @@
       <thead>
         <tr>
           <th align="left">
-            <input type="checkbox" name="cbx-all" 
-            #checkbox="ngModel"
-            [(ngModel)]="checkboxHead"
-            (change)="onChangeCbxAll()">
+            <label class="filters">
+              <input type="checkbox" name="cbx-all" 
+                #checkbox="ngModel"
+                [(ngModel)]="checkboxHead"
+                (change)="onChangeCbxAll()">
+              <span class="icon"><i class="fa fa-check"></i></span>
+            </label>
           </th>
           <th align="left">
             <span>Placa</span>
@@ -45,10 +48,13 @@
       <tbody>
         <tr *ngFor="let veiculo of veiculos; let idx = index">
           <td>
-            <input type="checkbox" name="cbx" 
-              #cbx="ngModel"
-              [(ngModel)]="veiculo.checked"
-              (change)="onChangeCbx()">
+            <label class="filters">
+              <input type="checkbox" name="cbx" 
+                #cbx="ngModel"
+                [(ngModel)]="veiculo.checked"
+                (change)="onChangeCbx()">
+              <span class="icon"><i class="fa fa-check"></i></span>
+            </label>
           </td>
           <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
             <span>{{ veiculo.placa }}</span>
@@ -81,10 +87,14 @@
 
 <div class="fleet-control-footer">
   <div class="pagination">
-		<button (click)="onChangePage(1)" [disabled]="pageNow === 1"><<</button>
+		<button (click)="onChangePage(1)" [disabled]="pageNow === 1">
+      <i class="fa fa-angle-double-left fa-lg" aria-hidden="true"></i>
+    </button>
 
 		<button class="btn-page" *ngFor="let page of pagination" [disabled]="page === pageNow" (click)="onChangePage(page)">{{page}}</button>
 
-		<button (click)="onChangePage(pageNow + 1)" [disabled]="pageNow === pagination.length">>></button>
+		<button (click)="onChangePage(pageNow + 1)" [disabled]="pageNow === pagination.length">
+      <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>
+    </button>
 	</div>
 </div>

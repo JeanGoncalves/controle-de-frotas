@@ -64,10 +64,8 @@ export class FleetControlService {
     }
 
     search(term: string): Promise<Veiculo[]> {
-        return this.http.get(`${this.veiculosUrl}/?marca=${term}`)
-            .toPromise()
-            .then(response => response.json().data as Veiculo[])
-            .catch(this.handleError);
+        return this.findAll()
+            .then((veiculos: Veiculo[]) => veiculos.filter((veiculo: Veiculo) => veiculo.marca.toUpperCase().indexOf(term.toUpperCase()) !== -1 || veiculo.combustivel.toUpperCase().indexOf(term.toUpperCase()) !== -1));
     }
 
     replacePlaca(veiculo: Veiculo): string {

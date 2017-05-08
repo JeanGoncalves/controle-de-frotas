@@ -83,7 +83,16 @@ export class FleetControlListComponent implements OnInit {
   }
 
   onSearch(term: any): void {
-    this.veiculos = this._veiculos.filter((veiculo: Veiculo) => veiculo.combustivel.indexOf(term.value) !== -1 || veiculo.marca.indexOf(term.value) !== -1);
+      this.fleetControlService.search(term.value)
+          .then((veiculos: Veiculo[]) => {
+              this.createPagination(veiculos);
+              this._veiculos = veiculos;
+              this.veiculos = veiculos.slice(0, this.perPage);
+              this.pageNow = 1;
+          })
+          .catch(err => {
+              console.error(err);
+          });
   }
 
   private createPagination(veiculos: Veiculo[]): void {
