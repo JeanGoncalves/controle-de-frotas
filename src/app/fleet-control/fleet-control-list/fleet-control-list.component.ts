@@ -29,7 +29,7 @@ export class FleetControlListComponent implements OnInit {
             })
             .catch(err => {
                 console.error(err);
-            });    
+            });
   }
 
   onChangeCbxAll(): void {

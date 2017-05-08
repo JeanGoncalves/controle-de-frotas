@@ -30,7 +30,9 @@ export class FleetControlService {
     }
 
     create(veiculo: Veiculo): Promise<Veiculo> {
-        console.log(veiculo);
+        // generate primary key Test Ambiance
+        this.findAll().then(data => veiculo.id = data.length);
+        
         return this.http
             .post(this.veiculosUrl, JSON.stringify(veiculo), {headers: this.headers})
             .toPromise()
@@ -39,7 +41,7 @@ export class FleetControlService {
     }
 
     update(veiculo: Veiculo): Promise<Veiculo> {
-        const url = `${this.veiculosUrl}/${this.replacePlaca(veiculo)}`;
+        const url = `${this.veiculosUrl}/${veiculo.id}`;
         
         return this.http
             .put(url, JSON.stringify(veiculo), {headers: this.headers})
@@ -49,7 +51,7 @@ export class FleetControlService {
     }
 
     delete(veiculo: Veiculo): Promise<Veiculo> {
-        const url = `${this.veiculosUrl}/${this.replacePlaca(veiculo)}`;
+        const url = `${this.veiculosUrl}/${veiculo.id}`;
         return this.http
             .delete(url, {headers: this.headers})
             .toPromise()

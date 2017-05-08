@@ -24,10 +24,10 @@ export class FleetControlDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.veiculo = new Veiculo('','','','','',0);
+    this.veiculo = new Veiculo(0,'','','','','',0);
 
     this.activatedRouter.params.forEach((params: Params) => {
-      let placa: string = this.resolvePlaca(params['placa']);
+      let placa: string = params['placa'];
 
       if (placa) {
         this.isNew = false;
