@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Location } from '@angular/common';
+import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
 import { Veiculo } from './../veiculo.model';
 import { FleetControlService } from './../fleet-control.service';
@@ -15,6 +16,11 @@ export class FleetControlDetailComponent implements OnInit {
 
   veiculo: Veiculo;
   private isNew: Boolean = true;
+  maskPlaca = [/[A-Za-z]/, /[A-Za-z]/, /[A-Za-z]/, '-', /\d/, /\d/, /\d/, /\d/];
+  maskValor = createNumberMask({
+                prefix: 'R$ ',
+                thousandsSeparatorSymbol: '.'
+              });
 
   constructor(
     private fleetControlService: FleetControlService,
@@ -24,7 +30,7 @@ export class FleetControlDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.veiculo = new Veiculo(0,'','','','','',0);
+    this.veiculo = new Veiculo(null,'','','','','',null);
 
     this.activatedRouter.params.forEach((params: Params) => {
       let placa: string = params['placa'];
@@ -41,6 +47,7 @@ export class FleetControlDetailComponent implements OnInit {
 
   onSubmit(): void {
     let promise;
+    this.veiculo.valor = Number(this.veiculo.valor.toString().replace(/\D/g,''));
 
     if (this.isNew) {
       promise = this.fleetControlService.create(this.veiculo);    

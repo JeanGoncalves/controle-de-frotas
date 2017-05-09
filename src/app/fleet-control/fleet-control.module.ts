@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { FleetControlListComponent } from './fleet-control-list/fleet-control-list.component';
 import { FleetControlDetailComponent } from './fleet-control-detail/fleet-control-detail.component';
@@ -12,7 +13,8 @@ import { FleetControlService } from './fleet-control.service';
     imports: [
         CommonModule,
         FormsModule,
-        FleetControlRoutingModule
+        FleetControlRoutingModule,
+        TextMaskModule
     ],
     declarations: [
         FleetControlListComponent,
