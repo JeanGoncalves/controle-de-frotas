@@ -1,11 +1,11 @@
 @font-face {
-    font-family: "RobotoLight";
-    src: url(assets/font/Roboto-light.ttf);
+    font-family: "Roboto";
+    src: url(assets/font/Roboto-Regular.ttf);
 }
 
 /* You can add global styles to this file, and also import other style files */
 body {
-    font-family: "RobotoLight" !important;
+    font-family: "Roboto" !important;
     margin: 0 auto;
     padding: 0 163px;
     background-color: #f1f4f9;
@@ -18,7 +18,7 @@ body {
 
 /* Buttons */
 .btn {
-    padding: 12px 37px;
+    padding: 12.5px 37px;
     border: none;
     border-radius: 4px;
     margin: 1px;
@@ -169,7 +169,7 @@ table.table thead {
 }
 
 table.table tbody { 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 table.table a {
@@ -254,7 +254,7 @@ table.table a {
     height: .9em;
     width: .9em;
     padding: 0.15em;
-    line-height: 1.1em;
+    line-height: 1em;
 }
 
 
