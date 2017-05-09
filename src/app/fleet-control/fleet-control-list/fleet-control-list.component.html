@@ -46,7 +46,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let veiculo of veiculos; let idx = index">
+        <tr *ngFor="let veiculo of veiculos; let idx = index" [ngClass]="{'line-select': veiculo.checked}">
           <td>
             <label class="filters">
               <input type="checkbox" name="cbx"
