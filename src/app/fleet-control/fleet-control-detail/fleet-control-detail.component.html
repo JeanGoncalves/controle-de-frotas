@@ -5,10 +5,10 @@
     <h1 *ngIf="!isNew">Editar Veículo</h1>
   </div>
 
-  <div class="form-control">
+  <form class="form-control" #veiculoForm="ngForm">
 
     <div class="form-group">
-      <span>Placa</span>
+      <span class="required">Placa</span>
       <input type="text" 
         name="placa"
         #placa="ngModel"
@@ -17,7 +17,7 @@
     </div>
     
     <div class="form-group">
-      <span>Marca</span>
+      <span class="required">Marca</span>
       <input type="text" 
         name="marca" 
         #marca="ngModel"
@@ -26,7 +26,7 @@
     </div>
     
     <div class="form-group">
-      <span>Modelo</span>
+      <span class="required">Modelo</span>
       <input type="text" 
         name="modelo" 
         #modelo="ngModel"
@@ -36,11 +36,13 @@
     
     <div class="form-group">
       <span>Combustível</span>
-      <input type="text" 
-        name="combustivel" 
+      <select name="combustivel" id="combustivel"
         #combustivel="ngModel"
-        required
-        [(ngModel)]="veiculo.combustivel"><br />
+        [(ngModel)]="veiculo.combustivel">
+        <option value="Gasolina">Gasolina</option>
+        <option value="Álcool">Álcool</option>
+        <option value="Flex">Flex</option>
+      </select><br />
     </div>
 
     <div class="form-group">
@@ -48,7 +50,6 @@
       <input type="text" 
         name="imagem" 
         #imagem="ngModel"
-        required
         [(ngModel)]="veiculo.imagem"><br />
     </div>
 
@@ -57,15 +58,14 @@
       <input type="text" 
         name="valor" 
         #valor="ngModel"
-        required
         [(ngModel)]="veiculo.valor"><br />
     </div>
 
-  </div>
   
-  <div class="panel-footer">
-    <input type="button" class="btn btn-clear" value="Cancelar" (click)="goBack()">
-    <input type="submit" class="btn btn-green" value="Gravar" (click)="onSubmit()">
-  </div>
+    <div class="panel-footer">
+      <input type="button" class="btn btn-clear" value="Cancelar" (click)="goBack()">
+      <button type="submit" class="btn btn-green" [disabled]="!veiculoForm.form.valid" (click)="onSubmit()">Gravar</button>
+    </div>
+  </form>
   
 </div>
