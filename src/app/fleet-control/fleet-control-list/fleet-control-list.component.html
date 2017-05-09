@@ -67,7 +67,7 @@
           </td>
           <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
             <span *ngIf="veiculo.imagem === null || veiculo.imagem === ''">Sem Foto</span>
-            <span *ngIf="veiculo.imagem !== null && veiculo.imagem !== ''"><a href="{{ veiculo.imagem }}">Imagem</a></span>
+            <span *ngIf="veiculo.imagem !== null && veiculo.imagem !== ''"><a href="{{ veiculo.imagem }}" target="_blanq">Imagem</a></span>
           </td>
           <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
             <span>{{ veiculo.combustivel }}</span>
