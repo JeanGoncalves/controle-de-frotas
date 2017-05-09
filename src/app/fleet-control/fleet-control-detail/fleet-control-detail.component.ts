@@ -15,7 +15,7 @@ import { FleetControlService } from './../fleet-control.service';
 export class FleetControlDetailComponent implements OnInit {
 
   veiculo: Veiculo;
-  private isNew: Boolean = true;
+  isNew: Boolean = true;
   maskPlaca = [/[A-Za-z]/, /[A-Za-z]/, /[A-Za-z]/, '-', /\d/, /\d/, /\d/, /\d/];
   maskValor = createNumberMask({
                 prefix: 'R$ ',
