@@ -85,6 +85,7 @@ export class FleetControlListComponent implements OnInit {
               this._veiculos = veiculos;
               this.veiculos = veiculos.slice(0, this.perPage);
               this.pageNow = 1;
+              this.onChangeCbxAll();
           })
           .catch(err => {
               console.error(err);
