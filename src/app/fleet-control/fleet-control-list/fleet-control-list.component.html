@@ -87,13 +87,13 @@
 
 <div class="fleet-control-footer">
   <div class="pagination">
-		<button (click)="onChangePage(1)" [disabled]="pageNow === 1">
+		<button (click)="onChangePage(pageNow - 1)" [disabled]="pageNow === 1">
       <i class="fa fa-angle-double-left fa-lg" aria-hidden="true"></i>
     </button>
 
 		<button class="btn-page" *ngFor="let page of pagination" [disabled]="page === pageNow" (click)="onChangePage(page)">{{page}}</button>
 
-		<button (click)="onChangePage(pageNow + 1)" [disabled]="pageNow === pagination.length || pagination.length === 0">
+		<button (click)="onChangePage(pageNow + 1)" [disabled]="pageNow === totalPages || totalPages === 0">
       <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>
     </button>
 	</div>
