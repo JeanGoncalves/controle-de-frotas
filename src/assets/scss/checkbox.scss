@@ -1,0 +1,39 @@
+/* Input Checkbox */
+.filters {
+
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    .icon {
+        background: #fff;
+        border: 1px solid #c9d3dd;
+        border-radius: .2em;
+        text-align: center;
+        font-size: 1.3em !important;
+        color: #666;
+        margin: 7px 8px;
+        height: .9em;
+        width: .9em;
+        padding: 0.15em;
+        line-height: 1em;
+        display: inline-block;
+
+        .fa {
+            visibility: hidden;
+        }
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    input {
+        display: none;
+        
+        &:checked + .icon .fa {
+            visibility: visible;
+        }
+    }
+}

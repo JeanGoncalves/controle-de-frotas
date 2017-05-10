@@ -1,0 +1,22 @@
+/* Panel */
+.panel {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #c9d3dd;
+    padding: 0 20px;
+
+    .panel-header {
+        border-bottom: 1px solid #c9d3dd;
+        margin-bottom: 20px;
+
+        &*:first-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .panel-footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+}
