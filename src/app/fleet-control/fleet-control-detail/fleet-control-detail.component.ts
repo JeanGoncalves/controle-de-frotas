@@ -47,7 +47,9 @@ export class FleetControlDetailComponent implements OnInit {
 
   onSubmit(): void {
     let promise;
-    this.veiculo.valor = Number(this.veiculo.valor.toString().replace(/\D/g,''));
+    if (this.veiculo.valor) {
+      this.veiculo.valor = Number(this.veiculo.valor.toString().replace(/\D/g,''));
+    }
 
     if (this.isNew) {
       promise = this.fleetControlService.create(this.veiculo);    
