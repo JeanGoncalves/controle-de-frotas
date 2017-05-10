@@ -31,16 +31,16 @@
           <th align="left" width="140">
             <span>Modelo</span>
           </th>
-          <th align="left">
+          <th align="left" class="hidden-480">
             <span>Marca</span>
           </th>
-          <th align="left" width="150">
+          <th align="left" width="150" class="hidden-700 hidden-480">
             <span>Foto</span>
           </th>
-          <th align="left">
+          <th align="left" class="hidden-700 hidden-480">
             <span>Combustível</span>
           </th>
-          <th width="100">
+          <th width="100" class="hidden-480">
             <span>Valor</span>
           </th>
         </tr>
@@ -62,17 +62,17 @@
           <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
             <span>{{ veiculo.modelo }}</span>
           </td>
-          <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
+          <td [routerLink]="['/fleetControl/edit/', veiculo.placa]" class="hidden-480">
             <span>{{ veiculo.marca }}</span>
           </td>
-          <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
+          <td [routerLink]="['/fleetControl/edit/', veiculo.placa]" class="hidden-700 hidden-480">
             <span *ngIf="veiculo.imagem === null || veiculo.imagem === ''">Sem Foto</span>
             <span *ngIf="veiculo.imagem !== null && veiculo.imagem !== ''"><a href="{{ veiculo.imagem }}" target="_blanq">Imagem</a></span>
           </td>
-          <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
+          <td [routerLink]="['/fleetControl/edit/', veiculo.placa]" class="hidden-700 hidden-480">
             <span>{{ veiculo.combustivel }}</span>
           </td>
-          <td [routerLink]="['/fleetControl/edit/', veiculo.placa]">
+          <td [routerLink]="['/fleetControl/edit/', veiculo.placa]" class="hidden-480">
             <span>{{ veiculo.valor | currency: 'BRL' | slice:3 }}</span>
           </td>
         </tr>

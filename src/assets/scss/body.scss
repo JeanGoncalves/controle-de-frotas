@@ -1,0 +1,16 @@
+body {
+    font-family: "Roboto" !important;
+    margin: 0 auto;
+    padding: 0 163px;
+    background-color: #f1f4f9;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #406080;
+}
+
+@media screen and (max-width: 980px) {
+    body {padding: 0 53px;}
+}
+@media screen and (max-width: 700px) {
+    body {padding: 0;}
+}

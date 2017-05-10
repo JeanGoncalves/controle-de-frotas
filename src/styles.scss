@@ -3,17 +3,7 @@
     src: url(assets/font/Roboto-Regular.ttf);
 }
 
-/* You can add global styles to this file, and also import other style files */
-body {
-    font-family: "Roboto" !important;
-    margin: 0 auto;
-    padding: 0 163px;
-    background-color: #f1f4f9;
-    font-family: sans-serif;
-    font-size: 12px;
-    color: #406080;
-}
-
+@import '/assets/scss/body';
 @import '/assets/scss/btn';
 @import '/assets/scss/panel';
 @import '/assets/scss/form';

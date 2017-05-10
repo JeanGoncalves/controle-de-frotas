@@ -35,3 +35,21 @@ table.table {
         }
     }
 }
+
+@media screen and (max-width: 700px) {
+
+    table.table {
+        th.hidden-700, td.hidden-700 {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    table.table {
+        th.hidden-480, td.hidden-480 {
+            display: none;
+        }
+    }
+}
