@@ -26,3 +26,10 @@
         color: #777;
     }
 }
+
+@media screen and (max-width: 700px) {
+    .btn {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}

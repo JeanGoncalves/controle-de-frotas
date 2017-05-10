@@ -1,6 +1,7 @@
 /* Form components */
 .form-content {
     margin: 4px;
+    display: flex;
 
     * {
         margin: -3px;
@@ -56,5 +57,17 @@
     option {
         font-size: 16px;
         color: #416281;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .form-content .form-item-input {
+        width: 125px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-content .form-item-input {
+        width: 100%;
     }
 }

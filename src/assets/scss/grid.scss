@@ -5,3 +5,10 @@
     justify-content: space-between;
     margin-bottom: 18px;
 }
+
+@media screen and (max-width: 480px) {
+    .grid {
+        display: inline-block;
+        width: 100%;
+    }
+}
