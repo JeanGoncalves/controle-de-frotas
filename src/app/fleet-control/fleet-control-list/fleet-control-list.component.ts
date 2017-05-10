@@ -8,7 +8,7 @@ import { DialogService } from './../../dialog.service';
   moduleId: module.id,
   selector: 'app-fleet-control-list',
   templateUrl: './fleet-control-list.component.html',
-  styleUrls: ['./fleet-control-list.component.css']
+  styleUrls: ['./fleet-control-list.component.scss']
 })
 export class FleetControlListComponent implements OnInit {
 

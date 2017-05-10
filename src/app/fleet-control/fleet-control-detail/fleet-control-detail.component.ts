@@ -10,7 +10,7 @@ import { FleetControlService } from './../fleet-control.service';
   moduleId: module.id,
   selector: 'app-fleet-control-detail',
   templateUrl: './fleet-control-detail.component.html',
-  styleUrls: ['./fleet-control-detail.component.css']
+  styleUrls: ['./fleet-control-detail.component.scss']
 })
 export class FleetControlDetailComponent implements OnInit {
 

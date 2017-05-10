@@ -1,0 +1,268 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(assets/font/Roboto-Regular.ttf);
+}
+
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: "Roboto" !important;
+    margin: 0 auto;
+    padding: 0 163px;
+    background-color: #f1f4f9;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #406080;
+}
+
+/* globals styles helpers */
+
+/* Buttons */
+.btn {
+    padding: 12.5px 37px;
+    border: none;
+    border-radius: 4px;
+    margin: 1px;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
+    &.btn-green {
+        background-color: #4aba58;
+        color: #fff;
+    }
+
+    &.btn-red {
+        background-color: #f44336;
+        color: #fff;
+    }
+
+    &.btn-clear {
+        background-color: transparent;
+        color: #777;
+    }
+}
+
+
+
+/* Container */
+.container {
+    padding: 18px 40px;
+}
+
+
+/* Panel*/
+.panel {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #c9d3dd;
+    padding: 0 20px;
+
+    .panel-header {
+        border-bottom: 1px solid #c9d3dd;
+        margin-bottom: 20px;
+
+        &*:first-child {
+            margin-bottom: 0;
+        }
+    }
+
+
+    .panel-footer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+}
+
+
+/* Form components */
+.form-content {
+    margin: 4px;
+
+    * {
+        margin: -3px;
+    }
+
+    .form-item {
+        padding: 12px 15px;
+        border: 1px solid #c9d3dd;
+
+        &:first-child {
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+    }
+
+    .form-item-input {
+        width: 185px;
+
+        &::placeholder {
+            color: #a5aeb4;
+        }
+    }
+    
+    .form-item-btn {
+        background-color: #f1f4f9;
+        color: #406080;
+    }
+}
+
+
+.form-control .form-group {
+    display: grid;
+    width: 50%;
+    margin: 0 auto;
+
+    &.required::after{
+        content: '*';
+        color: #F44336;
+        margin: 4px;
+    }
+
+    input, select {
+        padding: 12px 15px;
+        border: 1px solid #c9d3dd;
+        border-radius: 5px;
+        color: #416281;
+    }
+
+    option {
+        font-size: 16px;
+        color: #416281;
+    }
+}
+
+
+/* Grid components */
+.grid {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+/* Table */
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #c9d3dd;
+    color: #416281;
+    margin-bottom: 32px;
+
+    tr {
+        border-top: 1px solid #c9d3dd;
+        border-bottom: 1px solid #c9d3dd;
+    }
+
+    a {
+        color: #3a92eb;
+        text-decoration-color: aquamarine;
+    }
+
+    thead {
+        background-color: #f8fafc;
+    }
+
+    tbody { 
+        font-size: 13px;
+        
+        tr {
+            height: 50px;
+
+            &:hover, .line-select {
+                cursor: pointer;
+                background-color: #d8e9fb;
+                border: 1px solid #8bc8f6;
+            }
+        }
+    }
+}
+
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: -3px;
+
+    button {
+        padding: 12px 15px;
+        border: 1px solid #c9d3dd;
+        margin: -1px;
+        background-color: #fff;
+        cursor: pointer;
+
+        &:first-child {
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        &:hover {
+            background-color: #fffaeb;
+        }
+
+        &.btn-page:disabled {
+            background-color: #d8e9fb !important;
+            border: 1px solid #8bc8f6 !important;
+            color: #708ca7 !important;
+        }
+    }
+}
+
+
+/* Input Checkbox */
+.filters {
+
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    .icon {
+        background: #fff;
+        border: 1px solid #c9d3dd;
+        border-radius: .2em;
+        text-align: center;
+        font-size: 1.3em !important;
+        color: #666;
+        margin: 7px 8px;
+        height: .9em;
+        width: .9em;
+        padding: 0.15em;
+        line-height: 1em;
+        display: inline-block;
+
+        .fa {
+            visibility: hidden;
+        }
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    input {
+        display: none;
+        
+        &:checked + .icon .fa {
+            visibility: visible;
+        }
+    }
+}
+
+
+
